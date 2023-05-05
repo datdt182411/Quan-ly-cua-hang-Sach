@@ -24,12 +24,12 @@ public class ClockThread extends Thread {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss aa");
         while (true) {            
             Date now = new Date();
-            String st = sdf.format(now);            //Convert value Time to value String
+            String st = sdf.format(now);            
             
             lbl.setText(st);        
             
             try {
-                Thread.sleep(1000);                 //1000 ms = 1s ==> 1s jump Time value
+                Thread.sleep(1000);               
             } catch (InterruptedException ex) {}
         }
     }
