@@ -23,8 +23,8 @@ public class Validator {
        // Check text == null 
         if (field.getText().equals("")){                                                
             sb.append(msg).append("\n");
-            field.setBackground(Color.yellow);         //If text = null ==> display yellow
-            field.requestFocus();                      //Call the method make to create symbol input
+            field.setBackground(Color.yellow);        
+            field.requestFocus();                      
             flag = false;
         }else{
             field.setBackground(Color.white);
@@ -37,8 +37,8 @@ public class Validator {
        // Check text == null 
         if (field.getText().equals("")){                                                
             sb.append(msg).append("\n");
-            field.setBackground(Color.yellow);         //If text = null ==> display yellow
-            field.requestFocus();                      //Call the method make to create symbol input
+            field.setBackground(Color.yellow);         
+            field.requestFocus();                     
             flag = false;
         }else{
             field.setBackground(Color.white);
@@ -53,8 +53,8 @@ public class Validator {
        // Check password == null 
         if (password.equals("")){                                                
             sb.append(msg).append("\n");
-            field.setBackground(Color.yellow);         //If text = null ==> display yellow
-            field.requestFocus();                      //Call the method make to create symbol input
+            field.setBackground(Color.yellow);      
+            field.requestFocus();                    
             flag = false;
         }else{
             field.setBackground(Color.white);
