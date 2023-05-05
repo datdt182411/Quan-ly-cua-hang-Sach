@@ -40,7 +40,7 @@ public class ProductManagementPanel extends javax.swing.JPanel {
         
     }
     
-     //  The method create name colum of data table   
+    
     private void initTable(){
         tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(new String[]{"Mã Sách", "Tên Sách", "Giá Tiền", "Số Lượng", "Mã Loại Sách"});
@@ -65,7 +65,7 @@ public class ProductManagementPanel extends javax.swing.JPanel {
         }
     }
      
-     //The method create data help choose data in box
+
      private void initComboBoxMaLoaiSach() {
         try {
             Connection connection = DatabaseHelper.opConnection();
