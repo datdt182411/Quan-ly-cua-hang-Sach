@@ -18,7 +18,6 @@ import java.util.List;
  * @author admin
  */
 public class NguoiDungDao {
-// employee:
 
     private NguoiDung createNhanVien(ResultSet rs) throws SQLException {
         NguoiDung emp = new NguoiDung();
