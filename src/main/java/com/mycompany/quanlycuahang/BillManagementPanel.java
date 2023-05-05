@@ -49,9 +49,7 @@ public class BillManagementPanel extends javax.swing.JPanel {
     private boolean checkClickcbxMaDH = false;
     private final SimpleDateFormat format = new SimpleDateFormat("yy/MM/dd");
 
-    /**
-     * Creates new form BillManagementPanel
-     */
+   
     public BillManagementPanel() {
         initComponents();
         initComboBoxMaDH();
@@ -536,7 +534,7 @@ public class BillManagementPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCapNhatActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        StringBuilder sb = new StringBuilder();         //  Create obj sb use check data  
+        StringBuilder sb = new StringBuilder();       
         Validator.checkEmpty(txtMaDonHang, sb, "Mã đơn hàng chưa nhập");
 
         if (sb.length() > 0) {
@@ -599,7 +597,7 @@ public class BillManagementPanel extends javax.swing.JPanel {
 
     private void btnXoaCTDHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaCTDHActionPerformed
         // TODO add your handling code here:
-        StringBuilder sb = new StringBuilder();         //  Create obj sb use check data  
+        StringBuilder sb = new StringBuilder();         
         Validator.checkEmpty(txtSTT, sb, "Mã chưa nhập");
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(this, sb);
@@ -631,7 +629,7 @@ public class BillManagementPanel extends javax.swing.JPanel {
             int row = tblBillDetail.getSelectedRow(); // nay dang bi loi
 
             if (row >= 0) {
-                String id = (String) tblBillDetail.getValueAt(row, 5);              //method getValueAt take value hàng and value cột đầu tiên trong hàng
+                String id = (String) tblBillDetail.getValueAt(row, 5);            
                 BillDetailDao dao = new BillDetailDao();
                 BillDetail bD = dao.findByIdDetail(id);
 
@@ -651,7 +649,7 @@ public class BillManagementPanel extends javax.swing.JPanel {
 
     private void btnXuatDonHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatDonHangActionPerformed
         // TODO add your handling code here:
-        StringBuilder sb = new StringBuilder();     //  Create obj sb use check data    
+        StringBuilder sb = new StringBuilder();    
         if (sb.length() > 0) {
             JOptionPane.showMessageDialog(this, sb);
             return;
@@ -757,10 +755,10 @@ public class BillManagementPanel extends javax.swing.JPanel {
         try {
             Hashtable map = new Hashtable(); //Object map help fitler object need print
             JasperReport rpt = JasperCompileManager.compileReport("src/main/java/com/mycompany/quanlycuahang/rptXuatDonHang.jrxml");
-            map.put("MaDH", Integer.parseInt(txtMaDonHang.getText()));        //MaDH o WHERE khi truy van
+            map.put("MaDH", Integer.parseInt(txtMaDonHang.getText()));       
             Connection connection = DatabaseHelper.opConnection();
             
-            JasperPrint p = JasperFillManager.fillReport(rpt, map, connection);    //Truyen data, tham so, ket noi      
+            JasperPrint p = JasperFillManager.fillReport(rpt, map, connection);     
             
             JasperViewer.viewReport(p,false);    // false is Boolean isExitOnClose 
         } catch (JRException ex) {
