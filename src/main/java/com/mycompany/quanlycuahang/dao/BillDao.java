@@ -34,7 +34,7 @@ public class BillDao {
         return bill;
     }
 
-    //   The method make insert data into datatable
+
     public boolean insert(Bill bill) throws Exception {
         String sql = "insert into  donhang(madh, makh, tendangnhap, ngaytaodon, tongtien, trangthai) values(?,?,?,?,?,?)";
         try (
@@ -46,12 +46,12 @@ public class BillDao {
             pstmt.setInt(5, bill.getTongTien());
             pstmt.setInt(6, bill.getTrangThai());
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
 
-//The method Find user by Id
+
     public Bill findById(int madonhang) throws Exception {
         String sql = "select * from donhang where madh = ?";
         try (
@@ -85,7 +85,7 @@ public class BillDao {
         return null;
     }
 
-//Create the method help read all data in table
+
     public List< Bill> findAll() throws Exception {
         String sql = "select * from donhang";
         try (
@@ -101,7 +101,7 @@ public class BillDao {
         }
     }
 
-//   The method make update data into datatable
+
     public boolean update(Bill bill) throws Exception {
         String sql = "update donhang"
                 + " SET makh = ?, tendangnhap = ?, ngaytaodon = ?, tongtien = ? "
@@ -114,7 +114,7 @@ public class BillDao {
             pstmt.setDate(3, bill.getNgayTaoDon());
             pstmt.setInt(4, bill.getTongTien());
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
@@ -128,7 +128,7 @@ public class BillDao {
             pstmt.setInt(2, bill.getMaDonHang());
             pstmt.setInt(1, trangThai);
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
@@ -142,11 +142,11 @@ public class BillDao {
             pstmt.setInt(2, bill.getMaDonHang());
             pstmt.setInt(1, tongTien);
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
-//    The method make delete infomation billtomer
+
 
     public boolean delete(int madonhang) throws Exception {
         String sql = "delete from donhang where madh = ?";
@@ -154,7 +154,7 @@ public class BillDao {
                  Connection con = DatabaseHelper.opConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
             pstmt.setInt(1, madonhang);
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
