@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author admin
  */
 public class MainForm extends javax.swing.JFrame {
-     private CustomerManagementPanel mCustomerPanel;                        // Form management customer information 
+     private CustomerManagementPanel mCustomerPanel;                        
      private ProductManagementPanel mProductPanel;
      private CategoryManagementPanel mCategoryPanel;
      private BillManagementPanel mBillPanel;
@@ -28,7 +28,7 @@ public class MainForm extends javax.swing.JFrame {
     public MainForm() {
         initComponents();
         
-        setLocationRelativeTo(null);                      //Set for Form Display Center  
+        setLocationRelativeTo(null);                     
         
         setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH );          
         
@@ -36,7 +36,7 @@ public class MainForm extends javax.swing.JFrame {
         
     }
     
-//     The method create clock display Form
+
     private void initClock() {
         ClockThread th = new ClockThread(jLabel1);
         th.start();
@@ -271,32 +271,32 @@ public class MainForm extends javax.swing.JFrame {
     private void menuFile_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuFile_ExitActionPerformed
        System.exit(0);
     }//GEN-LAST:event_menuFile_ExitActionPerformed
-//    Make click icon will go to ManageCustomer form
+
     private void menuManageCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuManageCustomerActionPerformed
 
         if(mCustomerPanel == null){
         mCustomerPanel = new CustomerManagementPanel();
         ImageIcon icon = new ImageIcon(getClass()
                 .getResource("/com/mycompany/quanlycuahang/icons/customer16.png"));
-        tplMainBoard.addTab("Quản Lý Khách Hàng", icon, mCustomerPanel,"Quản Lý Khách Hàng");           //Use the method addTab add "QL Khách Hàng" into JTabPane
+        tplMainBoard.addTab("Quản Lý Khách Hàng", icon, mCustomerPanel,"Quản Lý Khách Hàng");         
       }
       tplMainBoard.setSelectedComponent(mCustomerPanel);
     }//GEN-LAST:event_menuManageCustomerActionPerformed
 
     
-//    Make click icon will go to ManageBook form
+
     private void menuManageBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuManageBookActionPerformed
         if(mProductPanel == null){
         mProductPanel = new ProductManagementPanel();
         ImageIcon icon = new ImageIcon(getClass()
                 .getResource("/com/mycompany/quanlycuahang/icons/book_16.png"));
-        tplMainBoard.addTab("Quản Lý Sách", icon, mProductPanel,"Quản Lý Sách ");           //Use the method addTab add "QL Khách Hàng" into JTabPane
+        tplMainBoard.addTab("Quản Lý Sách", icon, mProductPanel,"Quản Lý Sách ");         
       }
       tplMainBoard.setSelectedComponent(mProductPanel);
     }//GEN-LAST:event_menuManageBookActionPerformed
            
 
-//      The method make to display information Gioi Thieu
+
     private void tbrGioiThieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbrGioiThieuActionPerformed
        AboutUsDialog aboutUsDialog = new AboutUsDialog(this, true);
        
@@ -319,15 +319,15 @@ public class MainForm extends javax.swing.JFrame {
         processLoginSuccessful();
     }//GEN-LAST:event_tbrDangXuatActionPerformed
 
-//  The method help to make display Window Login on MainForm
+
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         LoginDialog dialog = new LoginDialog(this, true);
-        dialog.setVisible(true);                //The method setVisible help display(If false not display)
+        dialog.setVisible(true);            
         
         processLoginSuccessful();
     }//GEN-LAST:event_formWindowOpened
 
-//  The method help to display: LoginName, Role.
+
     private void processLoginSuccessful(){
         lblLoginName.setText(SharedData.nguoiDangNhap.getTenDangNhap());
         lblRole.setText(SharedData.nguoiDangNhap.getVaiTro());
@@ -337,7 +337,7 @@ public class MainForm extends javax.swing.JFrame {
         mProductPanel = null;
         mCustomerPanel = null;
         
-//  Help to decentralization use function with Role      
+   
         if (SharedData.nguoiDangNhap.getVaiTro().equals("Nhân viên")){
             menuManageBook.setEnabled(true);
             menuManageCategory.setEnabled(true);
@@ -357,7 +357,7 @@ public class MainForm extends javax.swing.JFrame {
        mCategoryPanel = new CategoryManagementPanel();
         ImageIcon icon = new ImageIcon(getClass()
                 .getResource("/com/mycompany/quanlycuahang/icons/options16.png"));
-        tplMainBoard.addTab("Quản Lý Loại Sách", icon, mCategoryPanel,"Quản Lý Loại Sách ");           //Use the method addTab add "QL Khách Hàng" into JTabPane
+        tplMainBoard.addTab("Quản Lý Loại Sách", icon, mCategoryPanel,"Quản Lý Loại Sách ");         
       }
       tplMainBoard.setSelectedComponent(mCategoryPanel);
     }//GEN-LAST:event_menuManageCategoryActionPerformed
@@ -367,7 +367,7 @@ public class MainForm extends javax.swing.JFrame {
       mBillPanel = new BillManagementPanel();
         ImageIcon icon = new ImageIcon(getClass()
                 .getResource("/com/mycompany/quanlycuahang/icons/bill16.png"));
-        tplMainBoard.addTab("Quản Lý Đơn Hàng", icon, mBillPanel,"Quản Lý Đơn Hàng");           //Use the method addTab add "QL Khách Hàng" into JTabPane
+        tplMainBoard.addTab("Quản Lý Đơn Hàng", icon, mBillPanel,"Quản Lý Đơn Hàng");         
       }
       tplMainBoard.setSelectedComponent(mBillPanel);
     }//GEN-LAST:event_menuManageBillActionPerformed
@@ -385,7 +385,7 @@ public class MainForm extends javax.swing.JFrame {
 //            mEmployeePanel = new EmployeeManagementPanel();
 //            ImageIcon icon = new ImageIcon(getClass()
 //                .getResource("/com/mycompany/quanlycuahang/icons/employee16.png"));
-//            tplMainBoard.addTab("Quản Lý Nhân Viên", icon, mEmployeePanel,"Quản Lý Nhân Viên");           //Use the method addTab add "QL Khách Hàng" into JTabPane
+//            tplMainBoard.addTab("Quản Lý Nhân Viên", icon, mEmployeePanel,"Quản Lý Nhân Viên");        
 //        }
 //        tplMainBoard.setSelectedComponent(mEmployeePanel);
     }//GEN-LAST:event_menuManageEmployeeActionPerformed
