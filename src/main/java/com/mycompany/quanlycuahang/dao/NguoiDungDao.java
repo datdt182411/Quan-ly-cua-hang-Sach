@@ -17,7 +17,6 @@ import java.util.List;
  *
  * @author admin
  */
-//Class contain the methods make on LoginDialog of User.
 public class NguoiDungDao {
 // employee:
 
@@ -33,7 +32,7 @@ public class NguoiDungDao {
         return emp;
     }
 
-    //   The method make insert data into datatable
+
     public boolean insert(NguoiDung Emp) throws Exception {
         String sql = "insert into nhanvien(tendangnhap, matkhau, vaitro, hoten, ngaysinh, sodt, email) values(?,?,?,?,?,?,?)";
         try (
@@ -46,12 +45,12 @@ public class NguoiDungDao {
             pstmt.setString(6, Emp.getSoDT());
             pstmt.setString(7, Emp.getEmail());
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
 
-//The method Find user by Id
+
     public NguoiDung findById(String tenDangNhap) throws Exception {
         String sql = "select * from nhanvien where tendangnhap = ?";
         try (
@@ -70,7 +69,6 @@ public class NguoiDungDao {
         }
     }
 
-//Create the method help read all data in table
     public List< NguoiDung> findAll() throws Exception {
         String sql = "select * from nguoidung";
         try (
@@ -86,7 +84,7 @@ public class NguoiDungDao {
         }
     }
 
-//   The method make update data into datatable
+
     public boolean update(NguoiDung Emp) throws Exception {
         String sql = "update nguoidung"
                 + " SET matkhau = ?, vaitro = ?, hoten = ?, ngaysinh = ?, sodt = ?, email = ? "
@@ -101,11 +99,11 @@ public class NguoiDungDao {
             pstmt.setString(5, Emp.getSoDT());
             pstmt.setString(6, Emp.getEmail());
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
-//    The method make delete infomation Employee
+
 
     public boolean delete(String tenDangNhap) throws Exception {
         String sql = "delete from nguoidung where tendangnhap = ?";
@@ -113,12 +111,12 @@ public class NguoiDungDao {
                  Connection con = DatabaseHelper.opConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
             pstmt.setString(1, tenDangNhap);
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
 
-//    Create the method Check Login of User
+
     public NguoiDung checkLogin(String tenDangNhap, String matKhau)
             throws Exception {
         String sql = "select tenDangNhap, matKhau, vaitro from nguoidung "
@@ -137,6 +135,6 @@ public class NguoiDungDao {
                 }
             }
         }
-        return null;                    //Return null so Login fail!
+        return null;                 
     }
 }
