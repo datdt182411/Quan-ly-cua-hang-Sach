@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author admin
  */
-//Class help define the method MessageDialog
+
 public class MessageDialogHelper {
     public static void showMessageDialog(Component parent, String content, String title){
         JOptionPane.showMessageDialog(parent, content,  title, JOptionPane.INFORMATION_MESSAGE);
