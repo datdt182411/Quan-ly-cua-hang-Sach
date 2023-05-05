@@ -15,7 +15,7 @@ import javax.swing.JTextField;
  *
  * @author admin
  */
-//Class help check input data
+
 public class Validator {
     
      public static boolean checkEmpty(JTextField field, StringBuilder sb, String msg){   
@@ -46,7 +46,7 @@ public class Validator {
         return flag;
     }
      
-// The method check input data in Password have Empty
+
       public static boolean checkEmpty(JPasswordField field, StringBuilder sb, String msg){   
         boolean flag = true;   
         String password = new String(field.getPassword());
@@ -63,19 +63,18 @@ public class Validator {
     }
      
       
-//The method check value EMAIL after input  
     public static boolean checkEmail(JTextField field, StringBuilder sb){
         boolean check = true;
         
          if(!checkEmpty(field, sb, "Email chưa nhập")){
              return false;
             }
-    // \\w+ : Một dãy ký tự 
-          Pattern pattern = Pattern.compile("\\w+@\\w+\\.\\w+");       //Build sample Email help check Format
+    // \\w+ : Character list
+          Pattern pattern = Pattern.compile("\\w+@\\w+\\.\\w+");     
           
-          Matcher matcher = pattern.matcher(field.getText());          //Call the method matcher help check value field.getText() with sample Email
+          Matcher matcher = pattern.matcher(field.getText());          
           
-          if(!matcher.find()){                  //Check comparator the same
+          if(!matcher.find()){                 
             sb.append("Email không hợp lệ\n");
             field.setBackground(Color.yellow);
             field.requestFocus();
@@ -83,14 +82,14 @@ public class Validator {
           }
 
          if(check){
-             field.setBackground(Color.white);              //Check value valid ==> Background is WHITE
+             field.setBackground(Color.white);              
           }
          
          
          return check;
         }
     
-//The method check value Phonenumber after input
+
     public static boolean checkPhoneNumber(JTextField field, StringBuilder sb){
          boolean check = true;
          
@@ -105,7 +104,7 @@ public class Validator {
                  field.requestFocus();
                  check = false;
              }
-             int phonenumber = Integer.parseInt(field.getText());             //Help convert value String to value Integer
+             int phonenumber = Integer.parseInt(field.getText());           
              
         } catch (Exception e) {
             sb.append("Số điện thoại vừa nhập không hợp lệ (Phải là các giá trị số)\n");
@@ -114,7 +113,7 @@ public class Validator {
             check = false;
                 }
          if(check){
-             field.setBackground(Color.white);                       //Check value valid ==> Background is WHITE
+             field.setBackground(Color.white);                       
                 }
          return check;
         }
