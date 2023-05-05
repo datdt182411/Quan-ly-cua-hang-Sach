@@ -31,7 +31,7 @@ public class CategoryManagementPanel extends javax.swing.JPanel {
         loadDataToTable();
     }
 
-    //  The method create name colum of data table   
+    
     private void initTable(){
         tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(new String[]{"Mã Loại Sách", "Tên Loại Sách"});
@@ -436,7 +436,7 @@ public class CategoryManagementPanel extends javax.swing.JPanel {
             int row = tblCategory.getSelectedRow();
       
       if(row >= 0){
-          String id = (String) tblCategory.getValueAt(row, 0);              //method getValueAt take value hàng and value cột đầu tiên trong hàng
+          String id = (String) tblCategory.getValueAt(row, 0);             
           CategoryDao dao = new CategoryDao();
           Category category = dao.findById(id);
           
