@@ -140,7 +140,7 @@ public class LoginDialog extends javax.swing.JDialog {
             if(nd == null){
                 MessageDialogHelper.showErrorDialog(this, "Tên đăng nhập hoặc mật khẩu chưa đúng", "Lỗi");
             }else{
-                SharedData.nguoiDangNhap = nd;              //Save information of nd input nguoiDangNhap
+                SharedData.nguoiDangNhap = nd;              
                 this.dispose();                                 
             }
         } catch (Exception e){
