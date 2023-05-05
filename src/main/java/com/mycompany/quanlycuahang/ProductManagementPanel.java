@@ -405,7 +405,7 @@ public class ProductManagementPanel extends javax.swing.JPanel {
                 txtMaSach.setText(Book.getMaSach());
                 txtTenSach.setText(Book.getTenSach());
                 txtGiaTien.setText(String.valueOf(Book.getGiaTien()));
-                txtSoLuong.setText(""+Book.getSoLuong());                // Because Quantity type Int so perform String need "" 
+                txtSoLuong.setText(""+Book.getSoLuong());               
                 txtMaSachTimKiem.setText("");
             }else{
                 JOptionPane.showMessageDialog(this, "Không tìm thấy thông tin sách");
@@ -426,7 +426,7 @@ public class ProductManagementPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNhapMoiActionPerformed
 
     private void btnLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuActionPerformed
-       StringBuilder sb = new StringBuilder();     //  Create obj sb use check data    
+       StringBuilder sb = new StringBuilder();     
         Validator.checkEmpty(txtMaSach, sb, "Mã sách chưa nhập");
         Validator.checkEmpty(txtTenSach, sb, "Tên sách chưa nhập");
         Validator.checkEmpty(txtGiaTien, sb, "Giá tiền chưa nhập");
@@ -445,7 +445,7 @@ public class ProductManagementPanel extends javax.swing.JPanel {
            Book.setMaSach(txtMaSach.getText());
            Book.setTenSach(txtTenSach.getText());
            Book.setGiaTien(Integer.parseInt(txtGiaTien.getText()));
-           Book.setSoLuong(Integer.parseInt(txtSoLuong.getText()));             //txtSoLuong save data type int. Convert Integer ==> String use method ParaseInteger
+           Book.setSoLuong(Integer.parseInt(txtSoLuong.getText()));            
    
            
            
@@ -464,7 +464,7 @@ public class ProductManagementPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnLuuActionPerformed
 
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
-         StringBuilder sb = new StringBuilder();         //  Create obj sb use check data  
+         StringBuilder sb = new StringBuilder();       
         Validator.checkEmpty(txtMaSach, sb, "Mã sách chưa nhập");
         Validator.checkEmpty(txtTenSach, sb, "Tên sách chưa nhập");
         Validator.checkEmpty(txtGiaTien, sb, "Giá tiền chưa nhập");
@@ -487,7 +487,7 @@ public class ProductManagementPanel extends javax.swing.JPanel {
            Book.setMaSach(txtMaSach.getText());
            Book.setTenSach(txtTenSach.getText());
            Book.setGiaTien(Integer.parseInt(txtGiaTien.getText()));
-           Book.setSoLuong(Integer.parseInt(txtSoLuong.getText()));             //txtSoLuong save data type int. Convert Integer ==> String use method ParaseInteger
+           Book.setSoLuong(Integer.parseInt(txtSoLuong.getText()));            
 
            
            BookDao dao = new BookDao();
@@ -506,7 +506,7 @@ public class ProductManagementPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCapNhatActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        StringBuilder sb = new StringBuilder();         //  Create obj sb use check data  
+        StringBuilder sb = new StringBuilder();         
         Validator.checkEmpty(txtMaSach, sb, "Mã sách chưa nhập");
       
        if(sb.length() > 0){
@@ -539,7 +539,7 @@ public class ProductManagementPanel extends javax.swing.JPanel {
             int row = tblBooks.getSelectedRow();
       
       if(row >= 0){
-          String id = (String) tblBooks.getValueAt(row, 0);              //method getValueAt take value hàng and value cột đầu tiên trong hàng
+          String id = (String) tblBooks.getValueAt(row, 0);             
           BookDao dao = new BookDao();
           Book Book = dao.findById(id);
           
