@@ -35,13 +35,11 @@ public class CategoryDao {
             pstmt.setString(1, category.getMaLoaiSach());
             pstmt.setString(2, category.getTenLoaiSach());
             
-            
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
 
-//The method Find user by Id
     public Category findById(String maLoaiSach) throws Exception{
         String sql = "select * from loaisach where maloaisach = ?";
         try(
@@ -62,7 +60,7 @@ public class CategoryDao {
         }
     }
     
-//Create the method help read all data in table
+
     public List< Category > findAll() throws Exception{
         String sql = "select * from loaisach";
         try(
@@ -80,7 +78,7 @@ public class CategoryDao {
     }
 }
     
-//   The method make update data into datatable
+
     public boolean update(Category category) throws Exception{
         String sql = "update loaisach"+
                 " SET tenloaisach = ?"
@@ -92,11 +90,11 @@ public class CategoryDao {
             pstmt.setString(2, category.getMaLoaiSach());
             pstmt.setString(1, category.getTenLoaiSach()); 
             
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
-//    The method make delete infomation Category
+
      public boolean delete(String maLoaiSach) throws Exception{
         String sql = "delete from loaisach where maloaisach = ?";
         try(
@@ -106,7 +104,6 @@ public class CategoryDao {
             pstmt.setString(1, maLoaiSach);
           
             
-//Use the method executeUpdate return value number row insert success (if > 0)
             return pstmt.executeUpdate() > 0;
         }
     }
