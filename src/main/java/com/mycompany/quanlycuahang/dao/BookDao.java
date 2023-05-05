@@ -29,7 +29,7 @@ public class BookDao {
         return book;
     }
 
-    //   The method make insert data into datatable
+
     public boolean insert(Book book) throws Exception {
         String sql = "insert into  sach(masach, tensach, giatien, soluong, maloaisach) values(?,?,?,?,?)";
         try (
@@ -40,12 +40,12 @@ public class BookDao {
             pstmt.setInt(4, book.getSoLuong());
             pstmt.setString(5, book.getMaLoaiSach());
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
 
-//The method Find user by Id
+
     public Book findById(String maSach) throws Exception {
         String sql = "select * from sach where masach = ?";
         try (
@@ -64,7 +64,7 @@ public class BookDao {
         }
     }
 
-//Create the method help read all data in table
+
     public List< Book> findAll() throws Exception {
         String sql = "select * from sach";
         try (
@@ -80,7 +80,7 @@ public class BookDao {
         }
     }
 
-//   The method make update data into datatable
+
     public boolean update(Book book) throws Exception {
         String sql = "update sach"
                 + " SET tensach = ?, giatien = ?, soluong = ?, maloaisach = ? "
@@ -93,7 +93,7 @@ public class BookDao {
             pstmt.setInt(3, book.getSoLuong());
             pstmt.setString(4, book.getMaLoaiSach());
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
@@ -107,11 +107,11 @@ public class BookDao {
             pstmt.setString(2, maSach);
             pstmt.setInt(1, soLuong);
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
              pstmt.executeUpdate();
         }
     }
-//    The method make delete infomation booktomer
+
 
     public boolean delete(String maSach) throws Exception {
         String sql = "delete from sach where masach = ?";
@@ -119,7 +119,7 @@ public class BookDao {
                  Connection con = DatabaseHelper.opConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
             pstmt.setString(1, maSach);
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
