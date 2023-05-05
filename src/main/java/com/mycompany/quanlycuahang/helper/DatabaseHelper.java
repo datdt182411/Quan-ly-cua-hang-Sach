@@ -7,7 +7,7 @@ package com.mycompany.quanlycuahang.helper;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-//Class use connect object in database and return data
+
 public class DatabaseHelper {
     public static Connection opConnection() throws Exception{
         Class.forName("com.mysql.jdbc.Driver");
