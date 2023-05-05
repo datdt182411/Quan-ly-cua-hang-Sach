@@ -29,7 +29,7 @@ public class BillDetailDao {
         return billDetail;
     }
 
-    //   The method make insert data into datatable
+
     public boolean insert(BillDetail billDetail) throws Exception {
         String sql = "insert into  chitietdonhang(mactdh,madh,masach,soluong) values(?,?,?,?)";
         try (
@@ -39,12 +39,12 @@ public class BillDetailDao {
             pstmt.setString(3, billDetail.getMaSach());
             pstmt.setInt(4, billDetail.getSoLuongThemVao());
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
 
-//The method Find user by Id
+
     public BillDetail findById(int madonhang) throws Exception {
         String sql = "select * from chitietdonhang where madh = ?";
         try (
@@ -81,7 +81,7 @@ public class BillDetailDao {
         }
     }
 
-//Create the method help read all data in table
+
     public List< BillDetail> findAll() throws Exception {
         String sql = "select * from chitietdonhang";
         try (
@@ -97,7 +97,7 @@ public class BillDetailDao {
         }
     }
 
-//   The method make update data into datatable
+
     public boolean update(BillDetail billDetail) throws Exception {
         String sql = "update chitietdonhang"
                 + " SET mactdh = ?, masach = ?, soluong = ? "
@@ -109,11 +109,11 @@ public class BillDetailDao {
             pstmt.setInt(3, billDetail.getSoLuongThemVao());
             pstmt.setString(1, billDetail.getMaChiTietDonHang());
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
-//    The method make delete infomation billtomer
+
 
     public boolean delete(String mactdh) throws Exception {
         String sql = "delete from chitietdonhang where mactdh = ?";
@@ -121,7 +121,7 @@ public class BillDetailDao {
                  Connection con = DatabaseHelper.opConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
             pstmt.setString(1, mactdh);
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
@@ -132,7 +132,7 @@ public class BillDetailDao {
                  Connection con = DatabaseHelper.opConnection();  PreparedStatement pstmt = con.prepareStatement(sql);) {
             pstmt.setInt(1, madh);
 
-//Use the method executeUpdate return value number row insert success (if > 0)
+
            return pstmt.executeUpdate()>0;
         }
     }
