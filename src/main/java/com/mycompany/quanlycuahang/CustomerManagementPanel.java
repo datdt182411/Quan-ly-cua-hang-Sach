@@ -31,7 +31,7 @@ public class CustomerManagementPanel extends javax.swing.JPanel {
         loadDataToTable();
     }
     
-//  The method create name colum of data table   
+
     private void initTable(){
         tableModel = new DefaultTableModel();
         tableModel.setColumnIdentifiers(new String[]{"Mã Khách Hàng", "Họ Tên", "Email", "Số ĐT", "Giới Tính", "Địa Chỉ"});
@@ -478,7 +478,7 @@ public class CustomerManagementPanel extends javax.swing.JPanel {
             int row = tblUsers.getSelectedRow();
       
       if(row >= 0){
-          String id = (String) tblUsers.getValueAt(row, 0);              //method getValueAt take value hàng and value cột đầu tiên trong hàng
+          String id = (String) tblUsers.getValueAt(row, 0);             
           CustomerDao dao = new CustomerDao();
           Customer cs = dao.findById(id);
           
