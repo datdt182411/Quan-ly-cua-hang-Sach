@@ -28,7 +28,7 @@ public class CustomerDao {
         cs.setDiaChi(rs.getString("diachi"));
         return cs;
     }
-    //   The method make insert data into datatable
+
     public boolean insert(Customer cus) throws Exception{
         String sql = "insert into khachhang(makh, hoten, email, sodt, gioitinh, diachi) values(?,?,?,?,?,?)";
         try(
@@ -42,12 +42,11 @@ public class CustomerDao {
             pstmt.setInt(5, cus.getGioiTinh());
             pstmt.setString(6, cus.getDiaChi());
             
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
 
-//The method Find user by Id
     public Customer findById(String maKH) throws Exception{
         String sql = "select * from khachhang where makh = ?";
         try(
@@ -68,7 +67,7 @@ public class CustomerDao {
         }
     }
     
-//Create the method help read all data in table
+
     public List< Customer > findAll() throws Exception{
         String sql = "select * from khachhang";
         try(
@@ -86,7 +85,6 @@ public class CustomerDao {
     }
 }
     
-//   The method make update data into datatable
     public boolean update(Customer cus) throws Exception{
         String sql = "update khachhang"+
                 " SET hoten = ?, email = ?, sodt = ?, gioitinh = ?, diachi = ? "
@@ -102,11 +100,11 @@ public class CustomerDao {
             pstmt.setInt(4, cus.getGioiTinh());
             pstmt.setString(5, cus.getDiaChi());
             
-//Use the method executeUpdate return value number row insert success (if > 0)
+
             return pstmt.executeUpdate() > 0;
         }
     }
-//    The method make delete infomation customer
+
      public boolean delete(String maKH) throws Exception{
         String sql = "delete from khachhang where makh = ?";
         try(
@@ -116,7 +114,6 @@ public class CustomerDao {
             pstmt.setString(1, maKH);
           
             
-//Use the method executeUpdate return value number row insert success (if > 0)
             return pstmt.executeUpdate() > 0;
         }
     }
